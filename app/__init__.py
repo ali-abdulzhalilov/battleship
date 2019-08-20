@@ -7,6 +7,8 @@ def create_app(config_class=Config):
 
     # module inits
 
+    from app.main import bp as main_bp
+    app.register_blueprint(main_bp)
     # blueprint registration
 
     if not app.debug and not app.testing:
