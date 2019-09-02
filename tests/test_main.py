@@ -14,7 +14,7 @@ class BaseTest(unittest.TestCase):
     def test_helloworld(self):
         res = self.client.get('/', content_type='html/text')
         self.assertEqual(res.status_code, 200)
-        self.assertEqual(res.data, b'Hello, World!')
+        self.assertIn(b'<h1>Under construction</h1>', res.data)
 
 if __name__=='__main__':
     unittest.main()
